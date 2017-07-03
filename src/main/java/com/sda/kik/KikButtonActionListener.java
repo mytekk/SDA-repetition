@@ -8,6 +8,9 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by RENT on 2017-07-01.
+ *
+ * klasa pomocnicza rozszerzajaca klase ActionListener
+ * tutaj, w metodzie actionPerformed, zdefiniowana jest akcja klikniecia przycisku przekazanego w konstruktorze
  */
 public class KikButtonActionListener implements ActionListener {
 

@@ -183,6 +183,7 @@ public class Application {
 
 
         ////////////////////////////////////////////////////////////////
+        //usuwanie duplikatow z listy, rezultat do tej samej listy
         List<String> names3 = new ArrayList<>();
         names3.add("Szymon");
         names3.add("Anna");
@@ -190,24 +191,25 @@ public class Application {
         names3.add("Tadeusz");
         names3.add("Mateusz");
         names3.add("Szymon");
-        //names3.add("Tadeusz");
+        //names3.add("Tadeusz");  //jak to dodam to przestaje dzialac - nie wiadomo dlaczego
 
-        Set<String> namesSet2 = new HashSet<>();
-        List<Integer> toRemove = new ArrayList<>();
-        for (int i = 0; i < names3.size(); i++) {
-            String name = names3.get(i);
-            if (namesSet2.contains(name)) {
+        Set<String> namesSet2 = new HashSet<>(); //tworze zbior stringow
+        List<Integer> toRemove = new ArrayList<>(); //lista integerow
+        for (int i = 0; i < names3.size(); i++) { //przegladam wejsciowa liste. Jesli wartosc z listy znajduje sie juz w zbiorze stringow
+            String name = names3.get(i);            //to indeks obecnej wartosc dodaje do listy duplikatow
+            if (namesSet2.contains(name)) {         //w przeciwnym razie wartosc dodawana jest do zbioru
                 toRemove.add(i);
             } else {
                 namesSet2.add(name);
             }
         }
 
+        System.out.println("Przed usuwaniem duplikatow: ");
         System.out.println(names3);
-        for (Integer i : toRemove) {
+        for (Integer i : toRemove) {    //przechodze po liscie duplikatow i po kolei usuwam z listy wejsciowej elementy, ktorych indeksy zgromadzilem w liscie duplikatow
             names3.remove(i.intValue()); //bo "i" jest obiektem Integer, wiec zamieniamy go na zwykly int
         }
-        System.out.println("asd");
+        System.out.println("Po usunieciu duplikatow: ");
         System.out.println(names3);
 
 

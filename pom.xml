@@ -29,7 +29,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- odwolanie do naszego innego projektu hello-servlet -->
+        <!-- odwolanie do naszego innego projektu javapoz3-hello-servlet, w celu skorzystania z pakietu KiK - kolko i krzyzyk -->
         <dependency>
             <groupId>com.szymon</groupId>
             <artifactId>hello-servlets</artifactId>

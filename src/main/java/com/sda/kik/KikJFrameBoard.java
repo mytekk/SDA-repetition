@@ -10,6 +10,16 @@ import java.util.List;
 
 /**
  * Created by RENT on 2017-07-01.
+ *
+ * klasa rozszerzajaca JFrame - zamiast tworzyć zmeinną typu JFrame tworzymy
+ * wlasna klase, ktora rozszerza klase JFrame
+ *
+ * odpowiednik prostej aplikacji okienkowej jest tutaj rozbity:
+ * 1) poczatek jest w konstruktorze naszej klasy
+ * 2) dodawanie 9 przyciskow jest w pomocniczej funkcji initPanel wywoływanej w konstruktorze
+ * 3) ustawienie pozostalych rzeczy (rozmiar, zamkniecie na krzyzyk) jka rowniez ustawienie widocznosci okienka
+ * jest w metodzie run
+ * 4) zdefiniowanie akcji klikniecia przyciskow wyniosione jest do klasy pomocniczej
  */
 public class KikJFrameBoard extends JFrame {
 
@@ -26,7 +36,7 @@ public class KikJFrameBoard extends JFrame {
         super("Kolko i krzyzyk");
         this.board = new Board(); //tworzymy boarda
         this.panel = new JPanel(new GridLayout(3, 3)); //tworzymy panel
-        this.currentSign = "X";
+        this.currentSign = "X"; //zaczynamy od "X", potem co ruch bedziemy zmieniac na "O"
         this.buttons = new ArrayList<>();
         initPanel(); //tworzy zawartosc panelu
         this.getContentPane().add(panel); //dodajemy panel do ???
